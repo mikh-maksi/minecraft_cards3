@@ -1,0 +1,185 @@
+player.onChat("tp", function () {
+    agent.teleportToPlayer()
+})
+
+player.onChat("l", function () {
+    agent.turn(LEFT_TURN)
+})
+
+player.onChat("go", function () {
+    for (let index = 0; index < 15; index++) {
+        agent.move(FORWARD, 1)
+    }
+})
+loops.forever(function () {
+    if (blocks.testForBlock(EMERALD_BLOCK, world(-30, 4, -99))) {
+        player.say(":)")
+    }
+})
+
+
+loops.forever(function () {
+    if (blocks.testForBlock(EMERALD_BLOCK, world(-30, 4, -99)) && flag == 0) {
+        flag = 1
+        player.say("(-)Flag deactivated")
+    }
+})
+
+player.onChat("start", function () {
+    flag = 0
+    player.say("(+)Flag activated.")
+})
+
+loops.forever(function () {
+    if (blocks.testForBlock(EMERALD_BLOCK, world(-30, 4, -99)) && flag == 0) {
+        flag = 1
+        player.say("(-)Flag deactivated")
+    }
+})
+
+player.onChat("start2", function () {
+    player.teleport(world(-40, 4, -90))
+    blocks.place(DIAMOND_BLOCK, world(-45, 4, -90))
+    flag2 = 1
+    player.say("Start")
+})
+
+
+
+loops.forever(function () {
+    if (!(blocks.testForBlock(DIAMOND_BLOCK, world(-45, 4, -90))) && flag2 == 1) {
+        flag2 = 0
+        player.say("finish")
+    }
+})
+
+player.onChat("Start3", function () {
+    player.teleport(world(-60, 4, -90))
+    blocks.place(DIAMOND_BLOCK, world(-65, 4, -90))
+    blocks.place(EMERALD_BLOCK, world(-65, 4, -92))
+    flag3 = 1
+    flag4 = 1
+    player.say("Initialisation")
+})
+
+loops.forever(function () {
+    if (!(blocks.testForBlock(DIAMOND_BLOCK, world(-65, 4, -90))) && flag3 == 1) {
+        flag3 = 0
+        player.say("Start")
+    }
+    if (!(blocks.testForBlock(EMERALD_BLOCK, world(-65, 4, -92))) && flag4 == 1) {
+        flag4 = 0
+        player.say("Finish")
+    }
+})
+
+player.onChat("Start3", function () {
+    player.teleport(world(-60, 4, -90))
+    blocks.place(DIAMOND_BLOCK, world(-65, 4, -90))
+    blocks.place(EMERALD_BLOCK, world(-65, 4, -92))
+    flag3 = 1
+    flag4 = 1
+    player.say("Initialisation")
+})
+
+loops.forever(function () {
+    if (!(blocks.testForBlock(DIAMOND_BLOCK, world(-65, 4, -90))) && flag3 == 1) {
+        flag3 = 0
+        player.say("Start")
+        timestart = gameplay.timeQuery(GAME_TIME)
+    }
+    if (!(blocks.testForBlock(EMERALD_BLOCK, world(-65, 4, -92))) && flag4 == 1) {
+        flag4 = 0
+        player.say(gameplay.timeQuery(GAME_TIME) - timestart)
+    }
+})
+
+player.onChat("labirint2", function () {
+    mat = GRASS
+    for (let індекс2 = 0; індекс2 <= 3; індекс2++) {
+        n = 2 * (індекс2 + 1)
+        blocks.fill(
+        mat,
+        world(n, 4, n),
+        world(n, 5, 0 - n),
+        FillOperation.Replace
+        )
+        blocks.fill(
+        mat,
+        world(n, 4, 0 - n),
+        world(0 - n, 5, 0 - n),
+        FillOperation.Replace
+        )
+        blocks.fill(
+        mat,
+        world(0 - n, 4, 0 - n),
+        world(0 - n, 5, n),
+        FillOperation.Replace
+        )
+        blocks.fill(
+        mat,
+        world(0 - n, 4, n),
+        world(n, 5, n),
+        FillOperation.Replace
+        )
+    }
+})
+
+
+player.onChat("overlap2", function () {
+    blocks.place(PLANKS_OAK, world(0, 4, 3))
+    blocks.place(PLANKS_OAK, world(0, 5, 3))
+    blocks.place(PLANKS_OAK, world(5, 4, 3))
+    blocks.place(PLANKS_OAK, world(5, 5, 3))
+    blocks.place(PLANKS_OAK, world(-1, 4, 7))
+    blocks.place(PLANKS_OAK, world(-1, 4, 7))
+})
+
+player.onChat("space2", function () {
+    blocks.place(AIR, world(2, 4, 0))
+    blocks.place(AIR, world(2, 5, 0))
+    blocks.place(AIR, world(4, 4, 2))
+    blocks.place(AIR, world(4, 5, 2))
+    blocks.place(AIR, world(6, 4, 5))
+    blocks.place(AIR, world(6, 5, 5))
+    blocks.place(AIR, world(-7, 4, -8))
+    blocks.place(AIR, world(-7, 5, -8))
+})
+
+player.onChat("pointer", function () {
+    blocks.place(IRON_BLOCK, world(-7, 3, -7))
+    blocks.place(GOLD_BLOCK, world(7, 3, -7))
+    blocks.place(GOLD_BLOCK, world(7, 3, 5))
+    blocks.place(GOLD_BLOCK, world(-5, 3, 5))
+    blocks.place(GOLD_BLOCK, world(5, 3, -5))
+    blocks.place(GOLD_BLOCK, world(-5, 3, -5))
+    blocks.place(GOLD_BLOCK, world(5, 3, 2))
+    blocks.place(GOLD_BLOCK, world(3, 3, 2))
+    blocks.place(IRON_BLOCK, world(3, 3, 0))
+    blocks.place(REDSTONE_BLOCK, world(0, 3, 0))
+})
+
+player.onChat("start4", function () {
+    player.teleport(world(-7, 4, -11))
+    blocks.place(DIAMOND_BLOCK, world(-7, 4, -9))
+    blocks.place(EMERALD_BLOCK, world(-1, 4, 0))
+    flag5 = 1
+    flag6 = 1
+    player.say("Initialisation")
+})
+
+loops.forever(function () {
+    if (!(blocks.testForBlock(DIAMOND_BLOCK, world(-7, 4, -9))) && flag5 == 1) {
+        flag5 = 0
+        player.say("Start")
+        timestart = gameplay.timeQuery(GAME_TIME)
+    }
+    if (!(blocks.testForBlock(EMERALD_BLOCK, world(-1, 4, 0))) && flag6 == 1) {
+        flag6 = 0
+        player.say(gameplay.timeQuery(GAME_TIME) - timestart)
+        gameplay.setDifficulty(EASY)
+        mobs.spawn(mobs.monster(ZOMBIE), world(0, 4, 0))
+    }
+})
+
+
