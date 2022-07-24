@@ -11,3 +11,28 @@
 ## Цікаве завдання
 * Створіть лодку та покатайтеся по каналу:  
 <img src = "img/channel06.gif">  
+
+
+## Мост із водою
+|№|Завдання|Код|Результат|
+|---|---|---|---|
+|3.|---|<img src = "img/channel14.png" width = 200> <img src = "img/channel13.png" width = 200> | <img src = "img/channel12.png" width = 300>|
+
+
+## Мост із водою
+|№|Завдання|Код|Результат|
+|---|---|---|---|
+|4.|---|<img src = "img/channel07.png" width = 200>  <img src = "img/channel08.png" width = 200>  |<img src = "img/channel06.png" width = 300> |
+
+
+## Мост зі сводом
+
+|№|Завдання|Код|Результат|
+|---|---|---|---|
+|5.|---|<img src = "img/channel09.png" width = 300>  <img src = "img/channel08.png" width = 300>|<img src = "img/channel10.png" width = 300>  <img src = "img/channel11.png" width = 300>  |
+
+
+
+
+
+
