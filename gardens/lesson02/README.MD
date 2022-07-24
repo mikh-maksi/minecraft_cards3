@@ -6,7 +6,7 @@
 
 |№|Завдання|Код|Результат|
 |---|---|---|---|
-|2.|1. Додайте басейни з країв каналу. |<img src = "img/channel03.png" width = 180> <img src = "img/channel04.png" width = 180>  |<img src = "img/channel05.png" width = 300> |
+|2.|1. Додайте басейни 2x6 з країв каналу.<br> 2. Додайте басейни 3x6 з країв каналу.<br> 3. Додайте басейни 4x8 з країв каналу.  |<img src = "img/channel03.png" width = 180> <img src = "img/channel04.png" width = 180>  |<img src = "img/channel05.png" width = 300> |
 
 ## Цікаве завдання
 * Створіть лодку та покатайтеся по каналу:  
@@ -16,20 +16,20 @@
 ## Мост із водою
 |№|Завдання|Код|Результат|
 |---|---|---|---|
-|3.|---|<img src = "img/channel14.png" width = 200> <img src = "img/channel13.png" width = 200> | <img src = "img/channel12.png" width = 300>|
+|3.|1. Створіть підпорку для моста з водою висотою в 5 блоків, шириною в 81 блок (від -40 до 40 відносно вас),  шириною в 4 блока (від 2 до 5). <br>2. Створіть підпорку для моста з водою висотою в 5 блоків, довжиною в 41 блок (від -20 до 20 відносно вас), шириною в 4 блока (від 2 до 5). <br> 3. Створіть підпорку для моста висотою в 7 блоків, довжиною в 50 блоків та шириною в 5 блоків. |<img src = "img/channel14.png" width = 200> <img src = "img/channel13.png" width = 200> | <img src = "img/channel12.png" width = 300>|
 
 
 ## Мост із водою
 |№|Завдання|Код|Результат|
 |---|---|---|---|
-|4.|---|<img src = "img/channel07.png" width = 200>  <img src = "img/channel08.png" width = 200>  |<img src = "img/channel06.png" width = 300> |
+|4.|1. Створіть квадратні підпорки для потока з водою. Шириною 5 блоків та із проміжками в 5 блоків.<br> 2. Створіть квадратні підпорки для потока з водою. Шириною 6 блоків та із проміжками в 4 блоки.<br> 3. Створіть квадратні підпорки для потока з водою. Шириною 3 блоки та із проміжками в 7 блоків. |<img src = "img/channel07.png" width = 200>  <img src = "img/channel08.png" width = 200>  |<img src = "img/channel06.png" width = 300> |
 
 
 ## Мост зі сводом
 
 |№|Завдання|Код|Результат|
 |---|---|---|---|
-|5.|---|<img src = "img/channel09.png" width = 300>  <img src = "img/channel08.png" width = 300>|<img src = "img/channel10.png" width = 300>  <img src = "img/channel11.png" width = 300>  |
+|5.|1. Створіть підпорки для потока з водою із округлими підпоркам. |<img src = "img/channel09.png" width = 300>  <img src = "img/channel08.png" width = 300>|<img src = "img/channel10.png" width = 300>  <img src = "img/channel11.png" width = 300>  |
 
 
 
