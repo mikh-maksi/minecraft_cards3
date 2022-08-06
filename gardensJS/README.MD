@@ -123,3 +123,214 @@ player.onChat("fountain", function () {
 <img src = "img/fountain08.png">
 
 2. Оберіть будь-який парк із фонтанами в світі, та за його фотографією реалізуйте його репліку в Майнкрафті.
+
+
+## Башта із водою
+
+#|Завдання|Код|Результат|
+|---|---|---|---|
+|2.|1. Побудуйте башту (від точки (23;4;23) до точки  (17;14;17)): башта 7х7 із висотою 11 блоків. Із прорізями для майбутнього фонтану: від (23;14;20) до (17;14;20) та від (20;14;23) до (20;14;17)<br> 2. Побудуйте баштй 10х10 із висотою 5 блоків із прорізами, що йдуть навхрест через центр башти.<br> 3. Перенесіть одну з побудованих башт на 20 блоків за одним з вимірів (x або z)| **Код №1**  |<img src = "img/garden04.png" width = 300> |
+
+
+**Код №1**
+```js
+player.onChat("tower", function () {
+    blocks.fill(
+    CHISELED_STONE_BRICKS,
+    world(23, 4, 23),
+    world(17, 14, 17),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    AIR,
+    world(23, 14, 20),
+    world(17, 14, 20),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    AIR,
+    world(20, 14, 23),
+    world(20, 14, 17),
+    FillOperation.Replace
+    )
+})
+
+
+```
+
+### Творчі завдання:
+1. Залийте прорізи водою (візьміть в інвентарі відро з водою чи додайте блок із водою).  
+<img src = "img/garden05.png" width = "400">
+2. Додайте більше прорізів (так, щоб вони проходили через один блок).
+
+## Ванни для води
+Для того, щоб вода не розивалася при течії з будівлі додамо ванни для води.
+#|Завдання|Код|Результат|
+|---|---|---|---|
+|3.|1. Додайте блоки ванни для збору води.|**Код №2**|<img src = "img/garden08.png" width = "300">|
+|4.|1. Запустіть з башти до ванн.|**Код №3**|<img src = "img/garden09.png" width = "300">|
+
+**Код №2**
+```js
+player.onChat("bath", function () {
+    blocks.fill(
+    CHISELED_STONE_BRICKS,
+    world(21, 4, 15),
+    world(19, 4, 16),
+    FillOperation.Replace
+    )
+    blocks.place(AIR, world(20, 4, 16))
+    blocks.fill(
+    CHISELED_STONE_BRICKS,
+    world(24, 4, 21),
+    world(25, 4, 19),
+    FillOperation.Replace
+    )
+    blocks.place(AIR, world(24, 4, 20))
+    blocks.fill(
+    CHISELED_STONE_BRICKS,
+    world(21, 4, 24),
+    world(19, 4, 25),
+    FillOperation.Replace
+    )
+    blocks.place(AIR, world(20, 4, 24))
+    blocks.fill(
+    CHISELED_STONE_BRICKS,
+    world(16, 4, 21),
+    world(15, 4, 19),
+    FillOperation.Replace
+    )
+    blocks.place(AIR, world(16, 4, 20))
+})
+```
+**Код №3**
+
+```js
+player.onChat("watertower", function () {
+    blocks.fill(
+    CHISELED_STONE_BRICKS,
+    world(23, 4, 23),
+    world(17, 14, 17),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    AIR,
+    world(23, 14, 20),
+    world(17, 14, 20),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    AIR,
+    world(20, 14, 23),
+    world(20, 14, 17),
+    FillOperation.Replace
+    )
+    blocks.place(WATER, world(20, 14, 20))
+})
+
+```
+## Творче завдання
+1. Поєднайте координату фонтану та координати башти із водою, щоб результ відповідав наступні картинці:  
+<img src = "img/garden14.png" width = "400">
+
+
+
+
+
+## Робота із часом
+В Minecraft є час. Найпростіша можливість познайомитись із часом - це вивести на екран поточне значення ігорового часу:
+```js
+player.onChat("time", function () {
+    player.say(gameplay.timeQuery(GAME_TIME))
+})
+```
+
+
+<img src = "img/time02.png"  width = 300>
+
+## "Живі" фонтани та час.
+Найцікавішими фонтанами є ті, які працюють не постійно, а з певною періодичністю.
+#|Завдання|Код|Результат|
+|---|---|---|---|
+|4|1. Запрограмуйте появу води, та зникнення її (заповнення місць появи води повітрям) з інтервалом 3 секунди. <br> 2. Запрограмуйте появу води, та зникнення її (заповнення місць появи води повітрям) з інтервалом 5 секунди. <br>3. Запрограмуйте появу води, та зникнення її (заповнення місць появи води повітрям) так щоб вод з'являлася на 5 секунд, а зникала на 3 секунди|**Код №4**|<img src = "img/garden-animation02.gif">|
+
+**Код №4**
+```js
+loops.forever(function () {
+    blocks.fill(
+    AIR,
+    world(30, 4, 0),
+    world(30, 7, 0),
+    FillOperation.Replace
+    )
+    loops.pause(3000)
+    blocks.fill(
+    WATER,
+    world(30, 4, 0),
+    world(30, 7, 0),
+    FillOperation.Replace
+    )
+    loops.pause(3000)
+})
+
+```
+
+## Творче завдання
+1. Реалзуйте запрограмовані фонтани (поява/зникання води на площі, яку ви програмували в першому завданні)
+
+
+## Ускладнене завдання (додаткове)
+1. Реалізуйте появу та зникнення води, спираючись на ігровий час.
+Крок 1. Вивід тексту на еркан.
+```js
+loops.forever(function () {
+    time = Math.idiv(gameplay.timeQuery(GAME_TIME), 100)
+    mod = time % 10
+    if (mod % 2 == 0) {
+        if (active == 1) {
+            player.say("Парні")
+            active = 0
+        }
+    } else {
+        if (active == 0) {
+            player.say("Непарні")
+            active = 1
+        }
+    }
+})
+
+
+```
+
+Крок 2. Поява та зникнення води:
+
+```js
+loops.forever(function () {
+    time = Math.idiv(gameplay.timeQuery(GAME_TIME), 100)
+    mod = time % 10
+    if (mod % 2 == 0) {
+        if (active == 1) {
+            blocks.fill(
+            AIR,
+            world(50, 4, 0),
+            world(50, 7, 0),
+            FillOperation.Replace
+            )
+            active = 0
+        }
+    } else {
+        if (active == 0) {
+            blocks.fill(
+            WATER,
+            world(50, 4, 0),
+            world(50, 7, 0),
+            FillOperation.Replace
+            )
+            active = 1
+        }
+    }
+})
+
+```
+
+
